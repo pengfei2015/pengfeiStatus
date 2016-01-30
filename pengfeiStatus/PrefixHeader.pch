@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  鹏飞微博2
+//
+//  Created by 王家辉 on 15/11/7.
+//  Copyright (c) 2015年 温鹏飞. All rights reserved.
+//
+
+#ifndef ____2_PrefixHeader_pch
+#define ____2_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#ifdef __OBJC__
+
+#ifdef DEBUG // 如果在调试状态打开
+#define WPFLog(...) NSLog(__VA_ARGS__)
+#else // 否则 关闭
+#define WPFLog(...)
+#endif
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define REWEET_FONT [UIFont systemFontOfSize:14.0]
+#define NAME_FONT [UIFont systemFontOfSize:16.0]
+#define TIME_FONT [UIFont systemFontOfSize:14.0]
+
+#define DELETE_EMOTIONVIEW_NOTIFICATION @"deleteEmotionViewNotification"
+#define SELECT_EMOTIONVIEW_NOTIFICATION @"selectEmotionViewNotification"
+#define SELECT_EMOTIONVIEW @"selectEmotionView"
+#define WPFRGB(r, g, b) [UIColor colorWithRed:(r) / 255.0 green:(g) / 255.0 blue:(b) / 255.0 alpha:1]
+#define WPFRAND_RGB WPFRGB(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
+
+#define APP_KEY @"2267650447"
+#define REDIRECT_URL @"http://www.baidu.com"
+#define APP_SECRET @"b6123afd0d5c81b736be72d49f982098"
+
+#import "UIView+Extension.h"
+#import "UIButton+Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "UIImage+Extension.h"
+
+
+
+// 富文本里面出现的链接
+#define WPFLinkText @"WPFLinkText"
+// 链接选中的通知
+#define WPFLinkDidSelectedNotification @"WPFLinkDidSelectedNotification"
+
+#endif
+
+#endif
