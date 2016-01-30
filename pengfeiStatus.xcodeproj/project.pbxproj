@@ -119,6 +119,7 @@
 		D3C310B51C5CB88F00868769 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = D3C310B41C5CB88F00868769 /* EmotionIcons */; };
 		D3C310B81C5CBA3700868769 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C310B71C5CBA3700868769 /* AppDelegate.m */; };
 		D3C310BE1C5CCAAC00868769 /* WPFLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C310BD1C5CCAAC00868769 /* WPFLink.m */; };
+		D3C310C11C5CE80500868769 /* WPFStatusDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C310C01C5CE80500868769 /* WPFStatusDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -364,6 +365,8 @@
 		D3C310B71C5CBA3700868769 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D3C310BC1C5CCAAC00868769 /* WPFLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFLink.h; sourceTree = "<group>"; };
 		D3C310BD1C5CCAAC00868769 /* WPFLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFLink.m; sourceTree = "<group>"; };
+		D3C310BF1C5CE80500868769 /* WPFStatusDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPFStatusDetailViewController.h; sourceTree = "<group>"; };
+		D3C310C01C5CE80500868769 /* WPFStatusDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPFStatusDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -613,6 +616,8 @@
 			children = (
 				D3C30F811C5CB83400868769 /* WPFHomeVC.h */,
 				D3C30F821C5CB83400868769 /* WPFHomeVC.m */,
+				D3C310BF1C5CE80500868769 /* WPFStatusDetailViewController.h */,
+				D3C310C01C5CE80500868769 /* WPFStatusDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1197,6 +1202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C310B01C5CB83400868769 /* WPFProfileVC.m in Sources */,
+				D3C310C11C5CE80500868769 /* WPFStatusDetailViewController.m in Sources */,
 				D3C3107D1C5CB83400868769 /* AFURLConnectionOperation.m in Sources */,
 				D3C310771C5CB83400868769 /* WPFMainTabBarController.m in Sources */,
 				D3C310A71C5CB83400868769 /* WPFUnreadRequest.m in Sources */,
@@ -1525,6 +1531,7 @@
 				D3C30F3F1C5CB7C300868769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3C30F401C5CB7C300868769 /* Build configuration list for PBXNativeTarget "pengfeiStatusTests" */ = {
 			isa = XCConfigurationList;
@@ -1533,6 +1540,7 @@
 				D3C30F421C5CB7C300868769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D3C30F431C5CB7C300868769 /* Build configuration list for PBXNativeTarget "pengfeiStatusUITests" */ = {
 			isa = XCConfigurationList;
@@ -1541,6 +1549,7 @@
 				D3C30F451C5CB7C300868769 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

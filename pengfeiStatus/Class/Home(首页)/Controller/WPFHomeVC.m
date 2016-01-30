@@ -17,6 +17,8 @@
 #import "MJExtension.h"
 #import "WPFHomeFooterView.h"
 #import "WPFStatusFrame.h"
+#import "WPFStatusDetailViewController.h"
+
 
 @interface WPFHomeVC ()<WPFHomeCoverViewDelegate>
 
@@ -266,5 +268,14 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [self.statusFrames[indexPath.row] height];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WPFStatusDetailViewController *detail = [[WPFStatusDetailViewController alloc] init];
+    WPFStatusFrame *frame = self.statusFrames[indexPath.row];
+    detail.status = frame.status;
+    [self.navigationController pushViewController:detail animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 @end

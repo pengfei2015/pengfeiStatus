@@ -102,7 +102,7 @@
     if (nil == self.text || nil == self.user) return;
     
     if (self.isReweeted) {
-        NSString *totalText = [NSString stringWithFormat:@"@%@ : %@",self.user.name,self.retweeted_status.text];
+        NSString *totalText = [NSString stringWithFormat:@"@%@ : %@",self.user.name,self.text];
         self.attributedString = [self attributedStringWithString:totalText];
     }else{
         self.attributedString = [self attributedStringWithString:self.text];
@@ -142,16 +142,16 @@
             
             NSString *trendRegex = @"#[a-zA-Z0-9\\u4e00-\\u9fa5]+#";
             [obj.string enumerateStringsMatchedByRegex:trendRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
-                [substr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:*capturedRanges];
+                [substr addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
                 
-                [substr addAttribute:@"linkText" value:*capturedStrings range:*capturedRanges];
+                [substr addAttribute:WPFLinkText value:*capturedStrings range:*capturedRanges];
             }];
             
             
             // 匹配@提到
             NSString *mentionRegex = @"@[a-zA-Z0-9\\u4e00-\\u9fa5\\-_]+";
             [obj.string enumerateStringsMatchedByRegex:mentionRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
-                [substr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:*capturedRanges];
+                [substr addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
                 [substr addAttribute:WPFLinkText value:*capturedStrings range:*capturedRanges];
             }];
 
@@ -160,9 +160,9 @@
             
             NSString *httpRegex = @"http(s)?://([a-zA-Z|\\d]+\\.)+[a-zA-Z|\\d]+(/[a-zA-Z|\\d|\\-|\\+|_./?%&=]*)?";
             [obj.string enumerateStringsMatchedByRegex:httpRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
-                [substr addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:*capturedRanges];
+                [substr addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:*capturedRanges];
                 
-                [substr addAttribute:@"linkText" value:*capturedStrings range:*capturedRanges];
+                [substr addAttribute:WPFLinkText value:*capturedStrings range:*capturedRanges];
             }];
             [string appendAttributedString:substr];
         }
